@@ -17,7 +17,7 @@ public class NativeController {
     @PostMapping(value = "/append",
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE)
-    public NativeResponse append(@RequestBody @Valid NativeRequest request) {
+    public AppendResponse append(@RequestBody @Valid AppendRequest request) {
         return service.append(request);
     }
 

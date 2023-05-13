@@ -2,7 +2,7 @@ package com.tlvlp.springnativedemo;
 
 import jakarta.validation.constraints.NotEmpty;
 
-public record NativeResponse(
+public record AppendResponse(
         @NotEmpty String appended
 ) {
 }

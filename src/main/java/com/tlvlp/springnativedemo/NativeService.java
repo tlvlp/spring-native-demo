@@ -9,8 +9,8 @@ public class NativeService {
 
     private final AtomicReference<String> stringCollector = new AtomicReference<>();
 
-    public NativeResponse append(NativeRequest request) {
-        return new NativeResponse(
+    public AppendResponse append(AppendRequest request) {
+        return new AppendResponse(
                 stringCollector.updateAndGet(coll -> coll + "-" + request.appendWith())
         );
     }

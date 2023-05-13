@@ -39,7 +39,7 @@ public class NativeControllerTest {
     @ParameterizedTest
     @MethodSource("testValues")
     void testConcat(String toAppend, String appended) throws Exception {
-        var content = mapper.writeValueAsString(new NativeRequest(toAppend));
+        var content = mapper.writeValueAsString(new AppendRequest(toAppend));
         System.out.println("conent: " + content);
         mockMvc.perform(post("/append")
                         .content(content)
