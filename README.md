@@ -55,7 +55,8 @@ All configuration methods can coexist and are cumulative:
 Depends on your configuration:
 - If `all native hints are provided`, then a simple `mvn clean package -Pnative` is enough.
 - If `training is necessary` to discover all components, multiple builds will be necessary.
-  - Generate native hints through GraalVM Tracer Agent.
+  - Run a simple build to create an executable jar.
+  - Run the jar with the GraalVM Tracer Agent to generate native hints.
   - Run native build with hints on the classpath.
 
 # Useful links
