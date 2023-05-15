@@ -19,7 +19,7 @@ async def send_requests(url, num_requests):
 
 async def main():
     url = 'http://localhost:8080/append'
-    num_requests = 5
+    num_requests = 1000
 
     results = await send_requests(url, num_requests)
     print(results)
