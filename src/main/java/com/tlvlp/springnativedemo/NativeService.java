@@ -14,7 +14,7 @@ public class NativeService {
 
     public AppendResponse append(AppendRequest request) {
         val result = stringCollector.updateAndGet(coll -> coll + "-" + request.appendWith());
-        log.info("collector: " + result);
+        log.info("collected: " + request.appendWith());
         return new AppendResponse(result);
     }
 }

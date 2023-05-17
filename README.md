@@ -51,6 +51,11 @@ All configuration methods can coexist and are cumulative:
 - `Profiling` ([GraalVM Tracing Agent](https://www.graalvm.org/22.0/reference-manual/native-image/Agent/))
 - Directly modifying `GraalVM native hints files`.
 
+# Testing
+- Recommended to test the services normally for a fast feedback loop.
+- Only test the native build to see if all parts are there.
+
+
 # Building
 Depends on your configuration:
 - If `all native hints are provided`, then a simple `mvn clean package -Pnative` is enough.
