@@ -12,9 +12,5 @@ Just stop the running process once training is complete!"
     -agentlib:native-image-agent=config-merge-dir="$(pwd)"/target/classes/META-INF/native-image \
     -jar "$INPUT_JAR_PATH"
 
-echo "Create a safety copy of the generated hints to be able to skip this step in the future"
-mkdir -p $(pwd)/native-hints-backup/post-train
-cp -rf $(pwd)/target/classes/META-INF $(pwd)/native-hints-backup/post-train/
-
-echo "Package the updated META-INF into the jar"
-mvn package -DskipTests
+#echo "Package the updated META-INF into the jar"
+#mvn package -DskipTests

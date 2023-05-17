@@ -1,6 +1,9 @@
 import asyncio
 import aiohttp
 
+url = 'http://localhost:8989/append'
+num_requests = 5000
+
 
 async def fetch_data(session, url, counter):
     async with session.post(url, json={'appendWith': counter}) as response:
@@ -18,10 +21,8 @@ async def send_requests(url, num_requests):
         results = await asyncio.gather(*tasks)
         return results
 
-async def main():
-    url = 'http://localhost:8989/append'
-    num_requests = 5000
 
+async def main():
     results = await send_requests(url, num_requests)
     print(results)
 
