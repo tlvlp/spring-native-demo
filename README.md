@@ -64,6 +64,13 @@ Depends on your configuration:
   - Run the jar with the GraalVM Tracer Agent to generate native hints.
   - Run native build with hints on the classpath.
 
+I have added a few scripts to make experimenting in local a bit faster:
+1. Run `_native-pre-build.sh` to generate all the runtime hints that lets the Tracing Agent start.
+2. Run `_train-and-trace.sh` to start the tracing agent (let it run for the next 2 steps).
+3. Run `_call-service.py` to exercise the service.
+4. Stop the Tracing Agent in `_train-and-trace.sh` with `ctrl+c` to write and package the hints.
+5. Run `_native-final-build.sh` to make the final build.
+
 # Useful links
 - [GraalVM Docs](https://www.graalvm.org/22.0/reference-manual/native-image/).
 - [Spring Boot Native Docs](https://docs.spring.io/spring-boot/docs/current/reference/html/native-image.html#native-image.introducing-graalvm-native-images).

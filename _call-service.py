@@ -2,7 +2,7 @@ import asyncio
 import aiohttp
 
 url = 'http://localhost:8989/append'
-num_requests = 5000
+num_requests = 2000
 
 
 async def fetch_data(session, url, counter):

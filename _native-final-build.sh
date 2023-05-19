@@ -15,5 +15,12 @@ echo "Unpack jar."
 jar -xvf $INPUT_JAR_WITH_NATIVE_HINTS
 
 echo "Run native build."
-"$GRAALVM_HOME"/bin/native-image -H:Name=$OUTPUT_EXECUTABLE_NAME -cp .:BOOT-INF/classes:`find BOOT-INF/lib | tr '\n' ':'`
+"$GRAALVM_HOME"/bin/native-image \
+--no-fallback \
+@META-INF/native-image \
+-H:Name=$OUTPUT_EXECUTABLE_NAME \
+-cp .:BOOT-INF/classes:`find BOOT-INF/lib | tr '\n' ':'`
+
+echo "Copy native executable back to the target directory."
 mv $OUTPUT_EXECUTABLE_NAME ../
+

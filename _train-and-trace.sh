@@ -12,5 +12,5 @@ Just stop the running process once training is complete!"
     -agentlib:native-image-agent=config-merge-dir="$(pwd)"/target/classes/META-INF/native-image \
     -jar "$INPUT_JAR_PATH"
 
-#echo "Package the updated META-INF into the jar"
-#mvn package -DskipTests
+echo "Package the updated META-INF into the jar"
+mvn package -DskipTests

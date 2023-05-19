@@ -1,5 +1,6 @@
 package com.tlvlp.springnativedemo;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +18,8 @@ public class NativeController {
     @PostMapping(value = "/append",
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE)
-    public AppendResponse append(@RequestBody @Valid AppendRequest request) {
-        return service.append(request);
+    public AppendResponse append(@RequestBody JsonNode requestNode) {
+        return service.append(requestNode);
     }
 
 }
