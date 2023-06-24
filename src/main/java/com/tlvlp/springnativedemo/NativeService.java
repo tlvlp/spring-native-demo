@@ -25,8 +25,8 @@ public class NativeService {
         // It either needs to be registered manually or viewed by the GraalVM Tracing Agent during "training".
         val request = mapper.treeToValue(requestNode, AppendRequest.class);
 
-        val result = stringCollector.updateAndGet(coll -> coll + "-" + request.appendWith());
-        log.info("collected: " + request.appendWith());
+        val result = stringCollector.updateAndGet(coll -> coll + "-" + request.getAppendWith());
+        log.info("collected: " + request.getAppendWith());
         return new AppendResponse(result);
     }
 }

@@ -5,17 +5,20 @@ url = 'http://localhost:8989/append'
 num_requests = 2000
 
 
-async def fetch_data(session, url, counter):
-    async with session.post(url, json={'appendWith': counter}) as response:
+async def fetch_data(session, counter):
+    async with session.post(url,
+                            headers={'content-type': 'application/json'},
+                            json={'appendWith': counter}
+                            ) as response:
         await response.json()
         return counter
 
 
-async def send_requests(url, num_requests):
+async def send_requests():
     async with aiohttp.ClientSession() as session:
         tasks = []
-        for counter in range(1, num_requests):
-            task = asyncio.ensure_future(fetch_data(session, url, counter))
+        for counter in range(1, num_requests + 1):
+            task = asyncio.ensure_future(fetch_data(session, counter))
             tasks.append(task)
 
         results = await asyncio.gather(*tasks)
@@ -23,7 +26,7 @@ async def send_requests(url, num_requests):
 
 
 async def main():
-    results = await send_requests(url, num_requests)
+    results = await send_requests()
     print(results)
 
 if __name__ == '__main__':

@@ -1,8 +1,14 @@
 package com.tlvlp.springnativedemo;
 
 import jakarta.validation.constraints.NotEmpty;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-public record AppendResponse(
-        @NotEmpty String appended
-) {
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+public class AppendResponse {
+    @NotEmpty private String appended;
 }
