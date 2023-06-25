@@ -1,7 +1,7 @@
 package com.tlvlp.springnativedemo;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import jakarta.validation.Valid;
+import com.tlvlp.otherpackage.NativeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
