@@ -1,7 +1,7 @@
 package com.tlvlp.springnativedemo;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.tlvlp.otherpackage.NativeService;
+import com.tlvlp.otherpackage.AppendService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,9 +11,9 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RequiredArgsConstructor
 @RestController
-public class NativeController {
+public class AppendController {
 
-    private final NativeService service;
+    private final AppendService service;
 
     @PostMapping(value = "/append",
             consumes = APPLICATION_JSON_VALUE,

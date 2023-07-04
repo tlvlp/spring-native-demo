@@ -2,7 +2,6 @@ package com.tlvlp.springnativedemo;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
-import lombok.experimental.Accessors;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,5 +9,6 @@ import lombok.experimental.Accessors;
 @Setter
 @ToString
 public class AppendRequest {
-    @NotEmpty private String appendWith;
+    @NotEmpty
+    private String appendWith;
 }

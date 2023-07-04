@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class NativeService {
+public class AppendService {
 
     private final ObjectMapper mapper;
     private final AtomicReference<String> stringCollector = new AtomicReference<>("START");
